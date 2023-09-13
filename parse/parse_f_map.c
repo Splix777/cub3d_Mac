@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:03:36 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 18:41:15 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:14:18 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	validate_final_map(t_game *game)
 		printf("CHECK MAP WALLS\n");
 		return (FALSE);
 	}
-	if (check_player_position(game) == FALSE || check_player(game) == FALSE)
+	if (check_player(game) == FALSE || check_player_position(game) == FALSE)
 	{
 		printf("CHECK PLAYER\n");
 		return (FALSE);

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:07:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 18:57:18 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:57:30 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define FALSE 0
 // Map
 # define SPEED 0.125
-# define ROT_SPEED 0.125
+# define ROT_SPEED 0.025
 // Error Messages
 # define USAGE "Usage: ./cub3d <map_of_your_choice.cub>\n"
 # define NOTCUB "Error: File is not a .cub file\n"
