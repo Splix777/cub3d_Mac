@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:29:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 16:34:29 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:23:20 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	load_rgb(t_game *game, char **rgb, char *type)
 	while (rgb[i])
 	{
 		color = ft_atoi(rgb[i]);
-		if (color < 0 || color > 255)
+		if (color < 0 || color > 255 || !ft_isdigit(rgb[i][0]))
 			return (FALSE);
 		i++;
 	}
