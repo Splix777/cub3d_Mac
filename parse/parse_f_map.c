@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:03:36 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 19:14:18 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:04:03 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,13 @@ void	find_finalmap_dimensions(t_game *game)
 	{
 		while (game->map.map[i][0] == '\n' || ft_isalpha(game->map.map[i][0]))
 			i++;
-		while (game->map.map[i] && (game->map.map[i][0] == '1' || game->map.map[i][0] == ' '))
+		while (game->map.map[i] && (game->map.map[i][0] == '1'
+			|| game->map.map[i][0] == ' '))
 		{
 			game->map.height++;
 			i++;
 		}
-		while(game->map.map[i])
+		while (game->map.map[i])
 		{
 			if (game->map.map[i][0] != '\n')
 				game->map.height = 0;
