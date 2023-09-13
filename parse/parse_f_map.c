@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:03:36 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 16:25:30 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:41:15 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,21 @@ void	find_finalmap_dimensions(t_game *game)
 	int	i;
 
 	i = 0;
-	while (game->map.map[i])
+	if (game->map.map[i])
 	{
-		if (game->map.map[i][0] == '\0' || ft_isalpha(game->map.map[i][0]))
+		while (game->map.map[i][0] == '\n' || ft_isalpha(game->map.map[i][0]))
 			i++;
-		else if (game->map.map[i][0] == '1' || game->map.map[i][0] == ' ')
+		while (game->map.map[i] && (game->map.map[i][0] == '1' || game->map.map[i][0] == ' '))
 		{
 			game->map.height++;
 			i++;
 		}
-		else
+		while(game->map.map[i])
+		{
+			if (game->map.map[i][0] != '\n')
+				game->map.height = 0;
 			i++;
+		}
 	}
 }
 
@@ -63,7 +67,7 @@ int	check_validate_map(t_game *game)
 
 	find_finalmap_dimensions(game);
 	if (game->map.height < 3)
-		return (err_msg(MAPTOOSMALL, 0));
+		return (err_msg(INVMAP, 0));
 	game->f_map = ft_calloc(game->map.height + 1, sizeof(char *));
 	if (game->f_map == NULL)
 		return (err_msg(MALLOCFAIL, 0));

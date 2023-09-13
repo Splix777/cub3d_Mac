@@ -6,14 +6,14 @@
 #    By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 16:04:04 by fsalazar          #+#    #+#              #
-#    Updated: 2023/09/13 16:04:05 by fsalazar         ###   ########.fr        #
+#    Updated: 2023/09/13 18:36:33 by fsalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3d
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 LDFLAGS = -lft -lftprintf
 
 RM = rm -f

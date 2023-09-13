@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:07:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 16:27:43 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:57:18 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ typedef struct s_texture
 	char			*south;
 	char			*east;
 	char			*west;
+	int				texture_count;
 	t_rgb			floor;
 	t_rgb			ceiling;
 	int				x;
@@ -238,7 +239,7 @@ int					check_validate_rgb(t_game *game);
 // parse/parse_textures.c
 int					valid_texture(char *line);
 int					check_validate_textures(t_game *game);
-char				*get_text(char *line);
+char				*get_text(char *line, t_game *game);
 // raycast/draw_frame.c
 void				set_image_pixel(t_img *image, int x, int y, int color);
 void				set_frame_image_pixel(t_game *game, t_img *image, int x,
