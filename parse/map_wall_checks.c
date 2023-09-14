@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:23:06 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/14 15:00:42 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:57:39 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int	check_sides(t_game *game)
 			j++;
 		if (game->f_map[i][j] != '1')
 			return (FALSE);
-		if (game->f_map[i][ft_strlen(game->f_map[i]) - 1] != '1')
+		if (game->f_map[i][ft_strlen(game->f_map[i]) - 1] != '1'
+			&& game->f_map[i][ft_strlen(game->f_map[i]) - 1] != ' ')
 			return (FALSE);
 		i++;
 	}
