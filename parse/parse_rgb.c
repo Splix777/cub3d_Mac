@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:29:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 18:23:20 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:38:17 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int	check_validate_rgb(t_game *game)
 	}
 	game->texture.hex_ceiling = rgb_to_hex(game, "C");
 	game->texture.hex_floor = rgb_to_hex(game, "F");
-	if (loaded != 2)
+	if (loaded != 2 || comma_count(game) == FALSE)
 		return (err_msg(INVRGB, FALSE));
 	return (TRUE);
 }

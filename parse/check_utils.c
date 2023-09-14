@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:20:38 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 16:21:34 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:39:09 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,32 @@ int	check_arg(char **argv)
 		return (err_msg(NOTCUB, 1), FALSE);
 	if (!is_valid_file(argv[1]))
 		return (err_msg(NOFILE, 1), FALSE);
+	return (TRUE);
+}
+
+int	comma_count(t_game *game)
+{
+	int	i;
+	int	j;
+	int	commas;
+
+	i = 0;
+	commas = 0;
+	while (game->map.map[i])
+	{
+		j = 0;
+		if (game->map.map[i][0] == 'F' || game->map.map[i][0] == 'C')
+		{
+			while (game->map.map[i][j])
+			{
+				if (game->map.map[i][j] == ',')
+					commas++;
+				j++;
+			}
+		}
+		i++;
+	}
+	if (commas != 4)
+		return (FALSE);
 	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:23:06 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 16:24:57 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:00:42 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,13 @@ int	check_offsets(t_game *game)
 		j = 0;
 		while (game->f_map[i][j])
 		{
-			if (game->f_map[i][j] == '0')
+			if (game->f_map[i][j] == '0'
+				|| ft_strchr("NSEW", game->f_map[i][j]))
 			{
 				if (game->f_map[i][j + 1] == 32 || game->f_map[i][j - 1] == 32)
 					return (FALSE);
-				if (ft_strlen(game->f_map[i + 1]) < j
-					|| ft_strlen(game->f_map[i - 1]) < j)
+				if (ft_strlen(game->f_map[i + 1]) <= j
+					|| ft_strlen(game->f_map[i - 1]) <= j)
 					return (FALSE);
 				if (game->f_map[i + 1][j] == 32 || game->f_map[i - 1][j] == 32)
 					return (FALSE);

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:07:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 19:57:30 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:01:14 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define FALSE 0
 // Map
 # define SPEED 0.125
-# define ROT_SPEED 0.025
+# define ROT_SPEED 0.035
 // Error Messages
 # define USAGE "Usage: ./cub3d <map_of_your_choice.cub>\n"
 # define NOTCUB "Error: File is not a .cub file\n"
@@ -207,6 +207,7 @@ int					ext_check_cub(char *file);
 int					ext_check_xpm(char *file);
 int					is_valid_file(char *file);
 int					check_arg(char **argv);
+int					comma_count(t_game *game);
 // parse/f_map_finalize.c
 void				resize_line(t_game *game, int i);
 void				make_map_square(t_game *game);
