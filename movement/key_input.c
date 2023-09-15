@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:17:02 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 16:17:03 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:29:26 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int	key_press_handler(int key, t_game *game)
 	if (key == MAC_KEY_D)
 		game->player.move_x = 1;
 	if (key == MAC_KEY_SHIFT_LEFT)
-		game->player.speed = 0.7;
+	{
+		game->player.rotate *= 2;
+		game->player.speed *= 4;
+	}
 	return (0);
 }
 
@@ -50,7 +53,10 @@ int	key_release_handler(int key, t_game *game)
 	if (key == MAC_KEY_RIGHT && game->player.rotate >= -1)
 		game->player.rotate = 0;
 	if (key == MAC_KEY_SHIFT_LEFT)
+	{
+		game->player.rotate /= 2;
 		game->player.speed = SPEED;
+	}
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:17:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/14 13:58:33 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:24:11 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ int	rotate_player(t_game *game, double rot_dir)
 	double	rotspeed;
 
 	moved = 0;
+	if (rot_dir > 1)
+		rot_dir = 1;
+	if (rot_dir < -1)
+		rot_dir = -1;
+	else if (rot_dir == 0)
+		return (0);
 	rotspeed = ROT_SPEED * rot_dir;
 	moved += rotate_left_right(game, rotspeed);
 	return (moved);
