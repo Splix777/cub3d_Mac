@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:03:21 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 19:20:57 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:22:17 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,26 @@ int	end_game(t_game *game)
 
 int	final_count(t_game *game)
 {
-		int final_count;
-		int	total_count;
-		int	i;
+	int	final_count;
+	int	total_count;
+	int	i;
 
-		final_count = (game->texture.texture_count + game->texture.rgb_count + game->map.height);
-		total_count = 0;
-		i = 0;
-		while (game->map.map[i])
-		{
-			if (game->map.map[i][0] != '\n' && game->map.map[i][0] != '\0')
-				total_count++;
-			i++;
-		}
-		if (final_count != total_count)
-		{
-			printf("Error: Invalid Characted\n");
-			return (FALSE);
-		}
-		return (TRUE);	
+	final_count = (game->texture.texture_count + game->texture.rgb_count
+			+ game->map.height);
+	total_count = 0;
+	i = 0;
+	while (game->map.map[i])
+	{
+		if (game->map.map[i][0] != '\n' && game->map.map[i][0] != '\0')
+			total_count++;
+		i++;
+	}
+	if (final_count != total_count)
+	{
+		printf("Error: Invalid Characted\n");
+		return (FALSE);
+	}
+	return (TRUE);
 }
 
 int	main(int argc, char **argv)
@@ -69,7 +70,7 @@ int	main(int argc, char **argv)
 	if (parse_args(&game, argv) == FALSE)
 		free_exit(&game, 1);
 	if (final_count(&game) == FALSE)
-		free_exit(&game, 1);	
+		free_exit(&game, 1);
 	init_player_pos(&game);
 	init_mlx(&game);
 	init_textures(&game);
