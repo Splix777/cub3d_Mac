@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:07:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/14 19:24:37 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:47:33 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,7 @@ int					get_rgb(t_game *game, char *line);
 int					check_validate_rgb(t_game *game);
 // parse/parse_textures.c
 int					valid_texture(char *line);
+int					already_filled(char *line, t_game *game);
 int					check_validate_textures(t_game *game);
 char				*get_text(char *line, t_game *game);
 // raycast/draw_frame.c

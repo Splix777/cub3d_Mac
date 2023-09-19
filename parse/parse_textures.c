@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:34:52 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/13 18:58:27 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:47:41 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,31 @@ int	valid_texture(char *line)
 	return (FALSE);
 }
 
+int	already_filled(char *line, t_game *game)
+{
+	if (!ft_strncmp(line, "NO", 2) && game->texture.north != NULL)
+	{
+		free (game->texture.north);
+		return (false);
+	}
+	if (!ft_strncmp(line, "SO", 2) && game->texture.south != NULL)
+	{
+		free (game->texture.south);
+		return (false);
+	}
+	if (!ft_strncmp(line, "WE", 2) && game->texture.west != NULL)
+	{
+		free (game->texture.west);
+		return (false);
+	}
+	if (!ft_strncmp(line, "EA", 2) && game->texture.east != NULL)
+	{
+		free (game->texture.east);
+		return (false);
+	}
+	return (true);
+}
+
 char	*get_text(char *line, t_game *game)
 {
 	char	**split;
@@ -44,6 +69,11 @@ char	*get_text(char *line, t_game *game)
 
 	if (valid_texture(line) == FALSE)
 		return (NULL);
+	if (!already_filled(line, game))
+	{
+		game->texture.texture_count++;
+		return (NULL);
+	}
 	split = ft_split(line, ' ');
 	text = rem_nl(split[1]);
 	free_char_array(split);
