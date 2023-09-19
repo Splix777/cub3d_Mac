@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:34:52 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 13:47:41 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:04:23 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,12 @@ char	*get_text(char *line, t_game *game)
 	char	**split;
 	char	*text;
 
-	if (valid_texture(line) == FALSE)
-		return (NULL);
 	if (!already_filled(line, game))
+	{
+		game->texture.texture_count++;
+		return (NULL);
+	}
+	if (valid_texture(line) == FALSE)
 	{
 		game->texture.texture_count++;
 		return (NULL);
