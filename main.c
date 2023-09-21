@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:03:21 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 19:22:17 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:39:50 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	final_count(t_game *game)
 	}
 	return (TRUE);
 }
-
+// while true; do leaks cub3D; sleep 1; clear; done
 int	main(int argc, char **argv)
 {
 	t_game	game;

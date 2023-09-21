@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:13:44 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 19:26:35 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:39:31 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,6 @@ void	free_structs(t_game *game)
 	free_texture_struct(&game->texture);
 	free_img_struct(&game->img);
 }
-
-// void	leaks(void)
-// {
-// 	system("leaks cub3d");
-// }
-// 		leaks();
-// 	leaks();
 
 void	free_exit(t_game *game, int exit_code)
 {
