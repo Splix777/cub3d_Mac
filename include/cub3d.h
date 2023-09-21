@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:07:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 19:21:27 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:11:57 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ typedef struct s_texture
 	char			*west;
 	int				texture_count;
 	int				rgb_count;
+	int				f_count;
+	int				c_count;
 	t_rgb			floor;
 	t_rgb			ceiling;
 	int				x;

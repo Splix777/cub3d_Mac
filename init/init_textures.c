@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:10:54 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 18:58:20 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:12:17 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	init_texture(t_texture *texture)
 	texture->west = NULL;
 	texture->texture_count = 0;
 	texture->rgb_count = 0;
+	texture->f_count = 0;
+	texture->c_count = 0;
 	init_rgb(&texture->floor);
 	init_rgb(&texture->ceiling);
 	texture->x = 0;

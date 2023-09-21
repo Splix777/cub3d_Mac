@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:29:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/19 18:59:00 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:13:16 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,10 @@ int	get_rgb(t_game *game, char *line)
 {
 	if (valid_rgb(game, line) == FALSE)
 		return (-1);
+	if (line[0] == 'F')
+		game->texture.f_count++;
+	if (line[0] == 'C')
+		game->texture.c_count++;
 	return (TRUE);
 }
 
@@ -107,7 +111,8 @@ int	check_validate_rgb(t_game *game)
 	game->texture.rgb_count = loaded;
 	game->texture.hex_ceiling = rgb_to_hex(game, "C");
 	game->texture.hex_floor = rgb_to_hex(game, "F");
-	if (loaded != 2 || comma_count(game) == FALSE)
+	if (loaded != 2 || comma_count(game) == FALSE
+		|| game->texture.f_count != 1 || game->texture.c_count != 1)
 		return (err_msg(INVRGB, FALSE));
 	return (TRUE);
 }
